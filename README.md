@@ -80,7 +80,13 @@ Red Teaming & Pentesting – Helps in reconnaissance during security assessments
      - `nmap -p 445 --script=smb* <target>`
        
 ### NFS Enumeration :
-    1. 
+    1. NFS Enumeration (Network File System) :
+        - NFS (Network File System) allows remote file sharing between systems, primarily in UNIX/Linux environments. 
+        - Misconfigured NFS servers can expose sensitive files and allow unauthorized access.
+    2. 
+        
+
+
 
 
    
