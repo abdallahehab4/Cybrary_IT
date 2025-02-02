@@ -39,4 +39,48 @@ Red Teaming & Pentesting – Helps in reconnaissance during security assessments
     - z → Zero-I/O mode (just check if port is open, no data sent).
     done < ip-list.txt → Loops through the IPs from ip-list.txt.
 
+### SMB Enumeration :
+1. What is SMB?
+   - Server Message Block (SMB) is a network protocol used for file sharing, printer sharing, and interprocess communication between devices on a network. It                 allows users and applications to read and write files and request services over a network.
+2. How SMB Works :
+   - SMB operates over TCP port 445 (modern versions) and allows a client to:
+       - Access shared files and directories on a remote server.
+       - Use networked printers.
+       - Authenticate users via Active Directory in Windows environments.
+       - Enable inter-process communication between applications.
+3. SMB Versions :
+ 
+           - SMBv1 (Legacy & Insecure):
+               - Introduced in Windows 95.
+               - Vulnerable to exploits like EternalBlue (MS17-010).
+               - Disabled by default in modern Windows.
+   
+           - SMBv2 (Improved Performance & Security):
+               - Introduced in Windows Vista & Server 2008.
+               - Reduces the number of commands for efficiency.
+               - More secure than SMBv1 but still lacks strong encryption.
+   
+           - SMBv3 (Enhanced Security & Performance):
+               - Introduced in Windows 8 & Server 2012.
+               - Supports encryption to prevent MITM attacks.
+               - Faster data transfer and improved security features.
+   
+           - SMBv3.1.1 (Latest & Most Secure):
+               - Introduced in Windows 10 & Server 2016.
+               - Adds pre-authentication integrity for better security.
+               - Strengthens encryption to prevent tampering.
+4. SMB Enumeration Using Nmap :
+   - Enumerate SMB Shares
+     - `nmap -p 445 --script=smb-enum-shares <target>`
+   - Enumerate SMB Users :
+     - `nmap -p 445 --script=smb-enum-users <target>`
+   - Enumerate SMB OS Version bash :
+     - `nmap -p 445 --script=smb-os-discovery <target>`
+   - Run All SMB Scripts bash :
+     - `nmap -p 445 --script=smb* <target>`
+       
+### NFS Enumeration :
+    1. 
 
+
+   
